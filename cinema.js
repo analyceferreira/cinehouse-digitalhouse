@@ -1,4 +1,4 @@
-
+//Declaração das variáveis
 let cinema = 'CineHouse';
 let catalogo = [{
     codigo : 001,
@@ -19,7 +19,7 @@ let catalogo = [{
 ]
 
 
-
+//Função Adicionar Filmes ao catálogo
 function adicionarFilme(codigo, titulo, duracao, atores, anoLancamento, emCartaz) {
     return catalogo.push({
         codigo: codigo,
@@ -32,6 +32,7 @@ function adicionarFilme(codigo, titulo, duracao, atores, anoLancamento, emCartaz
 }
 
 
+//Função Buscar um Filme do catálogo
 function buscarFilme (codigo) {
     let  posicaoFilme;
     for (let i = 0; i< catalogo.length; i++) {
@@ -39,7 +40,7 @@ function buscarFilme (codigo) {
             posicaoFilme = i
         }
     }
-    
+    //Validação de dados: Caso o código digitado não pertença a nenhum filme do catálogo print uma mensagem informando o erro
     if (posicaoFilme != undefined) {
         return posicaoFilme;
     }
@@ -49,11 +50,13 @@ function buscarFilme (codigo) {
 }
 
 
+//Função alterar status de em cartaz de um filme do catálogo
 function alterarStatusEmCartaz(codigo, novoStatusEmCartaz) {
     catalogo[buscarFilme(codigo)].emCartaz = novoStatusEmCartaz    
 }
 
 
+//Função mostrar atributos de um filme do catálogo no console de forma mais completa 
 function printarFilm(posicaoFilme) {
     console.log(`    Filme: ${catalogo[posicaoFilme].titulo}
     Duração: ${catalogo[posicaoFilme].duracao}h
