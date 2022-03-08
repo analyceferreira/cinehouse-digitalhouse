@@ -9,19 +9,19 @@
 
 Projeto criado no módulo Node.js da DigitalHouse Br
 
-<br>
+
 
 ## Objetivo
 
 O objetivo desse projeto é por em prática conhecimentos aprendidos ao longo das aulas e me desafiar a construir um código clean, coeso, com reutilização de códigos, e de fácil leitura.
 
-<br>
+
 
 ## Techs
 
 * JavaScript
 
-<br>
+
 
 ## Features
 
@@ -31,7 +31,7 @@ O objetivo desse projeto é por em prática conhecimentos aprendidos ao longo da
 * Consolo log com template literal
 * Readme claro e explicativo do projeto 
 
-<br>
+
 
 ## Autor
 
