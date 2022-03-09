@@ -20,15 +20,8 @@ let catalogo = [{
 
 
 //Função Adicionar Filmes ao catálogo
-function adicionarFilme(codigo, titulo, duracao, atores, anoLancamento, emCartaz) {
-    return catalogo.push({
-        codigo: codigo,
-        titulo: titulo,
-        duracao: duracao,
-        atores: atores,
-        anoLancamento: anoLancamento,
-        emCartaz: emCartaz
-    })
+function adicionarFilme(filme) {
+    return catalogo.push(filme)
 }
 
 
