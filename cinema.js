@@ -51,17 +51,25 @@ function buscarFilme (codigo) {
 
 
 //Função alterar status de em cartaz de um filme do catálogo
-function alterarStatusEmCartaz(codigo, novoStatusEmCartaz) {
-    catalogo[buscarFilme(codigo)].emCartaz = novoStatusEmCartaz    
+function alterarStatusEmCartaz(codigo) {
+    return catalogo[buscarFilme(codigo)].emCartaz = !catalogo[buscarFilme(codigo)].emCartaz
 }
 
 
 //Função mostrar atributos de um filme do catálogo no console de forma mais completa 
 function printarFilm(posicaoFilme) {
+    let statusEmCartaz = ""
+    if (catalogo[posicaoFilme].emCartaz == true){
+        statusEmCartaz = "Sim"
+    }
+    else {
+        statusEmCartaz = "Não"
+    }
     console.log(`    Filme: ${catalogo[posicaoFilme].titulo}
     Duração: ${catalogo[posicaoFilme].duracao}h
     Atores principais: ${catalogo[posicaoFilme].atores}
     Ano de Lançamento: ${catalogo[posicaoFilme].anoLancamento}
-    Em cartaz: ${catalogo[posicaoFilme].emCartaz}`)
+    Em cartaz: ${statusEmCartaz}`)
 }
+
 
