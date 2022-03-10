@@ -1,0 +1,22 @@
+[
+    {
+        "codigo": 1,
+        "titulo": "Jogos Vorazes",
+        "duracao": 2.21,
+        "atores": [
+            "Jennifer Lawrence, Josh Hutcherson"
+        ],
+        "anoLancamento": 2009,
+        "emCartaz": false
+    },
+    {
+        "codigo": 2,
+        "titulo": "Jogos Vorazes: Em Chamas",
+        "duracao": 2.55,
+        "atores": [
+            "Jennifer Lawrence, Josh Hutcherson"
+        ],
+        "anoLancamento": 2013,
+        "emCartaz": false
+    }
+]

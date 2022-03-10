@@ -1,22 +1,6 @@
 //Declaração das variáveis
 let cinema = 'CineHouse';
-let catalogo = [{
-    codigo : 001,
-    titulo: 'Jogos Vorazes',
-    duracao: 2,
-    atores: ['Jennifer Lawrence, Josh Hutcherson'],
-    anoLancamento : 2009,
-    emCartaz : false 
-},
-{
-    codigo : 002,
-    titulo: 'Jogos Vorazes: Em Chamas',
-    duracao: 2,
-    atores: ['Jennifer Lawrence, Josh Hutcherson'],
-    anoLancamento : 2013,
-    emCartaz : false
-}
-]
+const catalogo = require('./database/catalogo.json')
 
 
 //Função Adicionar Filmes ao catálogo
@@ -45,12 +29,12 @@ function buscarFilme (codigo) {
 
 //Função alterar status de em cartaz de um filme do catálogo
 function alterarStatusEmCartaz(codigo) {
-    return catalogo[buscarFilme(codigo)].emCartaz = !catalogo[buscarFilme(codigo)].emCartaz
+    return catalogo[buscarFilme(codigo)].emCartaz == true ? !catalogo[buscarFilme(codigo)].emCartaz : !catalogo[buscarFilme(codigo)].emCartaz
 }
 
 
 //Função mostrar atributos de um filme do catálogo no console de forma mais completa 
-function printarFilm(posicaoFilme) {
+function printarFilme(posicaoFilme) {
     let statusEmCartaz = ""
     if (catalogo[posicaoFilme].emCartaz == true){
         statusEmCartaz = "Sim"
@@ -58,11 +42,16 @@ function printarFilm(posicaoFilme) {
     else {
         statusEmCartaz = "Não"
     }
+
     console.log(`    Filme: ${catalogo[posicaoFilme].titulo}
     Duração: ${catalogo[posicaoFilme].duracao}h
     Atores principais: ${catalogo[posicaoFilme].atores}
     Ano de Lançamento: ${catalogo[posicaoFilme].anoLancamento}
     Em cartaz: ${statusEmCartaz}`)
+    console.log(statusEmCartaz)
 }
+
+
+
 
 
