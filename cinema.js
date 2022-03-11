@@ -1,5 +1,4 @@
 //Declaração das variáveis
-let cinema = 'CineHouse';
 const catalogo = require('./database/catalogo.json')
 
 
@@ -14,43 +13,62 @@ function buscarFilme (codigo) {
     let  posicaoFilme;
     for (let i = 0; i< catalogo.length; i++) {
         if (catalogo[i].codigo == codigo) {
-            posicaoFilme = i
+            return posicaoFilme = i
         }
-    }
-    //Validação de dados: Caso o código digitado não pertença a nenhum filme do catálogo print uma mensagem informando o erro
-    if (posicaoFilme != undefined) {
-        return posicaoFilme;
-    }
-    else {
-        return console.log('Desculpe, filme não encontrado no catálogo')
     }
 }
 
 
 //Função alterar status de em cartaz de um filme do catálogo
 function alterarStatusEmCartaz(codigo) {
-    return catalogo[buscarFilme(codigo)].emCartaz == true ? !catalogo[buscarFilme(codigo)].emCartaz : !catalogo[buscarFilme(codigo)].emCartaz
+    return catalogo[buscarFilme(codigo)].emCartaz == true ? catalogo[buscarFilme(codigo)].emCartaz = !catalogo[buscarFilme(codigo)].emCartaz : catalogo[buscarFilme(codigo)].emCartaz = !catalogo[buscarFilme(codigo)].emCartaz
 }
 
 
 //Função mostrar atributos de um filme do catálogo no console de forma mais completa 
 function printarFilme(posicaoFilme) {
     let statusEmCartaz = ""
-    if (catalogo[posicaoFilme].emCartaz == true){
-        statusEmCartaz = "Sim"
+
+    if (posicaoFilme != undefined) {
+        if (catalogo[posicaoFilme].emCartaz == true){
+            statusEmCartaz = "Sim"
+        }
+        else {
+            statusEmCartaz = "Não"
+        }
+    
+        return console.log(`        Código: ${catalogo[posicaoFilme].codigo} 
+        Filme: ${catalogo[posicaoFilme].titulo}
+        Duração: ${catalogo[posicaoFilme].duracao}h
+        Atores principais: ${catalogo[posicaoFilme].atores}
+        Ano de Lançamento: ${catalogo[posicaoFilme].anoLancamento}
+        Em cartaz: ${statusEmCartaz}`)
     }
     else {
-        statusEmCartaz = "Não"
+        return console.log('Desculpe, filme não encontrado no catálogo')
     }
 
-    console.log(`    Filme: ${catalogo[posicaoFilme].titulo}
-    Duração: ${catalogo[posicaoFilme].duracao}h
-    Atores principais: ${catalogo[posicaoFilme].atores}
-    Ano de Lançamento: ${catalogo[posicaoFilme].anoLancamento}
-    Em cartaz: ${statusEmCartaz}`)
-    console.log(statusEmCartaz)
 }
 
+
+//Função listar todos os filmes do catálogo
+function listarTodosOsFilmes() {
+    for (let i = 0; i<catalogo.length; i++){
+        printarFilme(i)
+        console.log(`
+        `)
+    }
+}
+
+
+//Função listar todos os filmes em cartaz do catálogo
+function listarFilmesEmCartaz() {
+    for (let i = 0; i<catalogo.length; i++){
+        catalogo[i].emCartaz == true ? printarFilme(i) : ""
+    
+        console.log("")
+    }
+}
 
 
 
