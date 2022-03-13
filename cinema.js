@@ -53,7 +53,8 @@ function printarFilme(filme) {
 //Função listar todos os filmes do catálogo
 function listarTodosOsFilmes() {
     return catalogo.forEach(function(filme){
-        console.log(filme)
+        printarFilme(filme)
+        console.log("")
     })
 }
 
@@ -72,8 +73,6 @@ function listarFilmesDeLongaDuracao(){
         return catalogo[index].duracao >= 2
     })
 }
-
-
 
 
 
