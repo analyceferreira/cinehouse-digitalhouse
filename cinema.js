@@ -69,6 +69,13 @@ function listarFilmesEmCartaz() {
     }
 }
 
+function listarFilmesDeLongaDuracao(){
+    return catalogo.filter(function(valor, index) {
+        return catalogo[index].duracao >= 2
+    })
+}
+
+
 
 
 
