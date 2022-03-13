@@ -10,18 +10,17 @@ function adicionarFilme(filme) {
 
 //Função Buscar um Filme do catálogo
 function buscarFilme (codigo) {
-    let  posicaoFilme;
-    for (let i = 0; i< catalogo.length; i++) {
-        if (catalogo[i].codigo == codigo) {
-            return posicaoFilme = i
-        }
-    }
+    return busca = catalogo.find(function(valor, index){
+        return catalogo[index].codigo == codigo
+    })
 }
 
 
 //Função alterar status de em cartaz de um filme do catálogo
-function alterarStatusEmCartaz(codigo) {
-    return catalogo[buscarFilme(codigo)].emCartaz == true ? catalogo[buscarFilme(codigo)].emCartaz = !catalogo[buscarFilme(codigo)].emCartaz : catalogo[buscarFilme(codigo)].emCartaz = !catalogo[buscarFilme(codigo)].emCartaz
+function alterarStatusEmCartaz(codigo, functionBuscarFilme) {
+    let filme = catalogo[functionBuscarFilme(codigo)].emCartaz
+
+    return filme = !filme
 }
 
 
@@ -69,6 +68,8 @@ function listarFilmesEmCartaz() {
         console.log("")
     }
 }
+
+
 
 
 

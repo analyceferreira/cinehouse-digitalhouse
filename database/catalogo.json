@@ -2,7 +2,7 @@
     {
         "codigo": 1,
         "titulo": "Jogos Vorazes",
-        "duracao": 2.21,
+        "duracao": 1.48,
         "atores": [
             "Jennifer Lawrence, Josh Hutcherson"
         ],
@@ -12,11 +12,31 @@
     {
         "codigo": 2,
         "titulo": "Jogos Vorazes: Em Chamas",
-        "duracao": 2.55,
+        "duracao": 1.58,
         "atores": [
             "Jennifer Lawrence, Josh Hutcherson"
         ],
         "anoLancamento": 2013,
         "emCartaz": false
+    },
+    {
+        "codigo": 3,
+        "titulo": "Batman",
+        "duracao": 2.25,
+        "atores": [
+            "Ben Aflick"
+        ],
+        "anoLancamento": 2019,
+        "emCartaz": false
+    },
+    {
+        "codigo": 4,
+        "titulo": "Batman",
+        "duracao": 2.55,
+        "atores": [
+            "Robert Pattinson"
+        ],
+        "anoLancamento": 2022,
+        "emCartaz": true
     }
 ]
