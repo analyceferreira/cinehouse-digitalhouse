@@ -25,22 +25,22 @@ function alterarStatusEmCartaz(codigo, functionBuscarFilme) {
 
 
 //Função mostrar atributos de um filme do catálogo no console de forma mais completa 
-function printarFilme(posicaoFilme) {
+function printarFilme(filme) {
     let statusEmCartaz = ""
 
-    if (posicaoFilme != undefined) {
-        if (catalogo[posicaoFilme].emCartaz == true){
+    if (filme != {}) {
+        if (filme.emCartaz == true){
             statusEmCartaz = "Sim"
         }
         else {
             statusEmCartaz = "Não"
         }
     
-        return console.log(`        Código: ${catalogo[posicaoFilme].codigo} 
-        Filme: ${catalogo[posicaoFilme].titulo}
-        Duração: ${catalogo[posicaoFilme].duracao}h
-        Atores principais: ${catalogo[posicaoFilme].atores}
-        Ano de Lançamento: ${catalogo[posicaoFilme].anoLancamento}
+        return console.log(`        Código: ${filme.codigo} 
+        Filme: ${filme.titulo}
+        Duração: ${filme.duracao}h
+        Atores principais: ${filme.atores}
+        Ano de Lançamento: ${filme.anoLancamento}
         Em cartaz: ${statusEmCartaz}`)
     }
     else {
@@ -52,11 +52,9 @@ function printarFilme(posicaoFilme) {
 
 //Função listar todos os filmes do catálogo
 function listarTodosOsFilmes() {
-    for (let i = 0; i<catalogo.length; i++){
-        printarFilme(i)
-        console.log(`
-        `)
-    }
+    return catalogo.forEach(function(filme){
+        console.log(filme)
+    })
 }
 
 
