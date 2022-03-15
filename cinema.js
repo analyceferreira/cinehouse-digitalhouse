@@ -68,6 +68,8 @@ function listarFilmesEmCartaz() {
     }
 }
 
+
+//Função listar todos os filmes que possuem mais de 2h de duração
 function listarFilmesDeLongaDuracao(){
     return catalogo.filter(function(valor, index) {
         return catalogo[index].duracao >= 2
